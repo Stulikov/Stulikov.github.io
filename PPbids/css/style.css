@@ -1,0 +1,98 @@
+@font-face {
+    font-family: '1futura';
+    src: url('../assets/6563.ttf');
+}
+
+html, body {
+	font-family: '1futura', Futura, Futura-Medium, "Futura Medium", "Century Gothic", CenturyGothic, "Apple Gothic", AppleGothic, "URW Gothic L", "Avant Garde", sans-serif;
+
+	display: block;
+	padding: 0px;
+	margin: 0px;
+	height: 100%;
+	overflow: hidden;
+}
+h1,h2,h3 {
+	font-weight: normal;
+	padding: 0;
+	margin: 0;
+}
+
+
+
+
+.counter-container-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	height: 100%;
+}
+
+.counter-container {
+	display: inline-block;
+	position: relative;
+	right: 42vw;
+
+	padding: 0;
+	margin: 0;
+}
+
+.counter_number {
+	font-size: 90vh;
+	line-height: 90vh;
+	color: #FA435A;
+	/*text-shadow: 2.4vh -1.5vh 0px #4990E2;*/
+	mix-blend-mode: multiply;
+}
+.counter_number.the2 {
+	position: absolute;
+	color: #4990E2;
+	left: 2.4vh;
+	top: -1.5vh;
+}
+
+.counter_title-wrapper {
+	width: 0;
+	height: 0;
+	position: absolute;
+	bottom: 8.5vh;
+	right: 0;
+	white-space: nowrap;
+}
+.counter_title {
+	top: 0;
+	right: 0;
+	height: 0;
+	font-size: 9.3vh;
+	line-height: 9.3vh;
+	transform: rotate(-90deg);
+}
+.counter_rest {
+	position: relative;
+	bottom: -2vh;
+	left: 4vh;
+	height: 0;
+	font-size: 1.1vh;
+	line-height: 1.1vh;
+}
+
+
+.great_yellow_bar-wrapper {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 0;
+	height: 0;
+
+	background: #F8E81C;
+}
+.great_yellow_bar {
+	position: relative;
+	top: -100vh;
+
+	right: 21vh;
+	width: 52vh;
+	height: 200vh;
+
+	background: #F8E81C;
+}
