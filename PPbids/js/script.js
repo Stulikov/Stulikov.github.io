@@ -1,23 +1,33 @@
-var limit = 10;
-var url1 = '://prvtparty.com/api/v1/venues';
-var url1 = './data.json';
+var limit = 10
+var url = '://prvtparty.com/api/v1/venues'
+var debug = true
 
-data = {"from":0,"total_count":1,"venues":[{"id":1,"name":"Von Bar Test","phone":"917-755-7517","address":"3 Bleecker Street","neighborhood":"Greenwich Village / Noho","city":"New York","state":"Ny","zip":"10012","expensiveness":"$","description":"","dining":true,"drinks":true,"activity":false,"latitude":40.725475,"longitude":-73.99259,"match":1,"open_bar":false,"food_available":true,"foursquare_rating":null,"headline":"Downtown bar with pre-gentrification roots!\nCraft beers and oenophilic wine selections.\nBook a private area for your event\n","state_zip":"Ny","menu_url":null,"sound_level":"Lively","drink_options":"None","cuisines":[],"activity_types":[],"party_moods":["20s birthday","30s birthday","40s+ birthday","Low key party"],"venue_type":"Lounge","time_zone":-5,"additions":[],"options":[],"cover_url":"https://d1lpcj66jvccwd.cloudfront.net/images/venue_photos/photos/000/000/001/wide/Von_-_Exterior.jpg?1491163154","favorite":false,"no_min_spend":true,"menu_pdf_url":null,"images_urls":["https://d1lpcj66jvccwd.cloudfront.net/images/venue_photos/photos/000/000/001/wide/Von_-_Exterior.jpg?1491163154","https://d1lpcj66jvccwd.cloudfront.net/images/venue_photos/photos/000/000/002/wide/Photo_from_mfg_design_1.jpg?1491228641","https://d1lpcj66jvccwd.cloudfront.net/images/venue_photos/photos/000/000/003/wide/Photo_from_mfg_design_2.jpg?1491228648","https://d1lpcj66jvccwd.cloudfront.net/images/venue_photos/photos/000/000/004/wide/jadie_and_window.png?1491228719"],"spaces":[{"id":2,"name":"Basement Dancehall","min_guests":20,"max_guests":150,"min_spend":null,"privacy":"Full private","cover_url":"https://d1lpcj66jvccwd.cloudfront.net/images/venue_photos/photos/000/000/002/wide/Photo_from_mfg_design_1.jpg?1491228641","schedules":[{"id":9,"weekday":"mon","available":true,"premium_price":null,"date":"2017-04-10","premium":false,"starts":" 7:00 pm","ends":" 4:00 am","premium_starts":null,"premium_ends":null,"starts_date":"2017-04-10T19:00:00.000-04:00","ends_date":"2017-04-10T04:00:00.000-04:00","premium_starts_date":null,"premium_ends_date":null,"items":[{"id":-1,"date":"2017-04-10","available":true,"starts":" 7:00 pm","ends":" 4:00 am","starts_date":"2017-04-10T19:00:00.000-04:00","ends_date":"2017-04-10T04:00:00.000-04:00"}]},{"id":10,"weekday":"tue","available":true,"premium_price":null,"date":"2017-04-11","premium":false,"starts":" 7:00 pm","ends":" 4:00 am","premium_starts":null,"premium_ends":null,"starts_date":"2017-04-11T19:00:00.000-04:00","ends_date":"2017-04-11T04:00:00.000-04:00","premium_starts_date":null,"premium_ends_date":null,"items":[{"id":-1,"date":"2017-04-11","available":true,"starts":" 7:00 pm","ends":" 4:00 am","starts_date":"2017-04-11T19:00:00.000-04:00","ends_date":"2017-04-11T04:00:00.000-04:00"}]},{"id":11,"weekday":"wed","available":true,"premium_price":null,"date":"2017-04-12","premium":false,"starts":" 7:00 pm","ends":" 4:00 am","premium_starts":null,"premium_ends":null,"starts_date":"2017-04-12T19:00:00.000-04:00","ends_date":"2017-04-12T04:00:00.000-04:00","premium_starts_date":null,"premium_ends_date":null,"items":[{"id":-1,"date":"2017-04-12","available":true,"starts":" 7:00 pm","ends":" 4:00 am","starts_date":"2017-04-12T19:00:00.000-04:00","ends_date":"2017-04-12T04:00:00.000-04:00"}]}],"images_urls":["https://d1lpcj66jvccwd.cloudfront.net/images/venue_photos/photos/000/000/002/wide/Photo_from_mfg_design_1.jpg?1491228641","https://d1lpcj66jvccwd.cloudfront.net/images/venue_photos/photos/000/000/003/wide/Photo_from_mfg_design_2.jpg?1491228648"]},{"id":1,"name":"Von - Side Room","min_guests":15,"max_guests":50,"min_spend":null,"privacy":"Semi-private","cover_url":"https://d1lpcj66jvccwd.cloudfront.net/images/venue_photos/photos/000/000/004/wide/jadie_and_window.png?1491228719","schedules":[{"id":2,"weekday":"mon","available":true,"premium_price":null,"date":"2017-04-10","premium":false,"starts":" 3:00 pm","ends":" 4:00 am","premium_starts":null,"premium_ends":null,"starts_date":"2017-04-10T15:00:00.000-04:00","ends_date":"2017-04-10T04:00:00.000-04:00","premium_starts_date":null,"premium_ends_date":null,"items":[{"id":-1,"date":"2017-04-10","available":true,"starts":" 3:00 pm","ends":" 4:00 am","starts_date":"2017-04-10T15:00:00.000-04:00","ends_date":"2017-04-10T04:00:00.000-04:00"}]},{"id":3,"weekday":"tue","available":true,"premium_price":null,"date":"2017-04-11","premium":false,"starts":" 3:00 pm","ends":" 4:00 am","premium_starts":null,"premium_ends":null,"starts_date":"2017-04-11T15:00:00.000-04:00","ends_date":"2017-04-11T04:00:00.000-04:00","premium_starts_date":null,"premium_ends_date":null,"items":[{"id":-1,"date":"2017-04-11","available":true,"starts":" 3:00 pm","ends":" 4:00 am","starts_date":"2017-04-11T15:00:00.000-04:00","ends_date":"2017-04-11T04:00:00.000-04:00"}]},{"id":4,"weekday":"wed","available":true,"premium_price":null,"date":"2017-04-12","premium":false,"starts":" 3:00 pm","ends":" 4:00 am","premium_starts":null,"premium_ends":null,"starts_date":"2017-04-12T15:00:00.000-04:00","ends_date":"2017-04-12T04:00:00.000-04:00","premium_starts_date":null,"premium_ends_date":null,"items":[{"id":-1,"date":"2017-04-12","available":true,"starts":" 3:00 pm","ends":" 4:00 am","starts_date":"2017-04-12T15:00:00.000-04:00","ends_date":"2017-04-12T04:00:00.000-04:00"}]}],"images_urls":["https://d1lpcj66jvccwd.cloudfront.net/images/venue_photos/photos/000/000/004/wide/jadie_and_window.png?1491228719"]}]}]}
+function get_count() {
+	$.ajax({
+		type: 'GET',
+		url: url,
+		dataType: "json"
+	}).done( function(data) {
+		console.log("Count loaded from " + url) ? debug
+		return data.total_count
+	}).fail(function() {
+		console.log("Failed remote file download") ? debug
+		return -1
+	})
+}
+
+function render_count(counter) {
+	if(counter != -1) {
+		$(".counter_number").each(function() {
+			$(this).html(counter)
+		})
+		$(".counter_rest > span").html(limit-counter)
+	}
+}
 
 
 $(document).ready(function() {
 
-	$.ajax({
-		type: 'GET',
-		url: url1,
-		dataType: "json"
-	}).done( function(data) {
-		counter = data.total_count;
-		$(".counter_number").each(function() {
-			$(this).html(counter);
-		});
-		$(".counter_rest > span").html(limit-counter);
-	}).fail(function() {
-		console.log("Failed remote file download");
-	});
-});
+	setInterval(render_count(get_count()), 1000)
+
+})
