@@ -1,5 +1,5 @@
 var limit = 10
-var url1 = '://prvtparty.com/api/v1/venues'
+var url1 = 'http://prvtparty.com/api/v1/venues'
 
 $(document).ready(function() {
 
