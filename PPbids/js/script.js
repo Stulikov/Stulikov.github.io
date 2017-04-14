@@ -1,5 +1,6 @@
 var limit = 10
 var url = '://prvtparty.com/api/v1/venues'
+url = './data.json'
 var debug = true
 
 function get_count() {
@@ -9,7 +10,7 @@ function get_count() {
 		dataType: "json"
 	}).done( function(data) {
 		if (debug) { console.log("Count loaded from " + url) }
-		return data.total_count
+		return toInt(data.total_count)
 	}).fail(function() {
 		if (debug) { console.log("Failed remote file download") }
 		return -1
