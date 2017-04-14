@@ -5,32 +5,29 @@ var debug = true
 
 var t = -1;
 
-function get_count() {
+function get_render_count() {
 	$.ajax({
 		type: 'GET',
 		url: url,
 		dataType: "json"
 	}).done( function(data) {
 		if (debug) { console.log("Count loaded from " + url) }
-		t = toInt(data.total_count)
-	}).fail(function() {
-		if (debug) { console.log("Failed remote file download") }
-		t = -1
-	})
-}
-
-function render_count(counter) {
-	if(counter != -1) {
+		
+		counter = parseInt(data.total_count)
 		$(".counter_number").each(function() {
 			$(this).html(counter)
 		})
 		$(".counter_rest > span").html(limit-counter)
-	}
+	}).fail(function() {
+		if (debug) { console.log("Failed remote file download") }
+		return -1
+	})
 }
 
 
 $(document).ready(function() {
 
-	setInterval(function () { get_count(); render_count(t); }, 1000)
+	get_render_count()
+	setInterval(get_render_count(), 1000)
 
 })
