@@ -8,10 +8,10 @@ function get_count() {
 		url: url,
 		dataType: "json"
 	}).done( function(data) {
-		console.log("Count loaded from " + url) ? debug
+		if (debug) { console.log("Count loaded from " + url) }
 		return data.total_count
 	}).fail(function() {
-		console.log("Failed remote file download") ? debug
+		if (debug) { console.log("Failed remote file download") }
 		return -1
 	})
 }
