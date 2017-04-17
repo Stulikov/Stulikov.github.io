@@ -5,29 +5,36 @@ var debug = true
 
 var t = -1;
 
-function get_render_count() {
-	$.ajax({
+function set_request() {
+	return $.ajax({
 		type: 'GET',
 		url: url,
 		dataType: "json"
-	}).done( function(data) {
-		if (debug) { console.log("Count loaded from " + url) }
-		
-		counter = parseInt(data.total_count)
+	})
+}
+function get_count(data) {
+	if (debug) { console.log("Count loaded from " + url) }
+	return data ? parseInt(data.total_count) : null;
+}
+
+function render_count(counter) {
+	if(counter != -1) {
 		$(".counter_number").each(function() {
 			$(this).html(counter)
 		})
 		$(".counter_rest > span").html(limit-counter)
-	}).fail(function() {
-		if (debug) { console.log("Failed remote file download") }
-		return -1
-	})
+	}
+}
+function fail_function (error_state, error_status, error_description) {
+	console.warn(error_status, error_description)
+}
+
+function init() {
+	set_request().then(get_count).then(render_count).catch(fail_function);
 }
 
 
 $(document).ready(function() {
-
-	get_render_count()
-	setInterval(get_render_count(), 1000)
-
+	init();
+	setInterval(function () { init(); }, 1000)
 })
